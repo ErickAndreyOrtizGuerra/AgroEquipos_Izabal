@@ -8,8 +8,6 @@ const preloader = document.getElementById('preloader');
 const progressFill = document.getElementById('progressFill');
 const progressText = document.getElementById('progressText');
 const scrollProgress = document.getElementById('scrollProgress');
-const backToTop = document.getElementById('backToTop');
-const progressRingCircle = document.querySelector('.progress-ring-circle');
 
 // Typewriter Animation
 function typeWriter() {
@@ -104,42 +102,6 @@ function initPreloader() {
     }
 }
 
-// Back to Top Functions
-function updateBackToTop() {
-    if (!backToTop || !progressRingCircle) return;
-    
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / scrollHeight) * 100;
-    
-    // Show/hide button based on scroll position
-    if (scrollTop > 300) {
-        backToTop.classList.add('show');
-    } else {
-        backToTop.classList.remove('show');
-    }
-    
-    // Update progress ring
-    const circumference = 164; // 2 * π * r (r = 26)
-    const offset = circumference - (scrollPercent / 100) * circumference;
-    progressRingCircle.style.strokeDashoffset = offset;
-}
-
-function scrollToTop() {
-    // Usar scroll nativo suave para mejor rendimiento en móvil
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
-// Back to Top Click Event
-if (backToTop) {
-    backToTop.addEventListener('click', (e) => {
-        e.preventDefault();
-        scrollToTop();
-    });
-}
 
 // Mobile Navigation Toggle
 if (navToggle && navMenu) {
@@ -191,9 +153,6 @@ window.addEventListener('scroll', () => {
     
     // Update scroll progress
     updateScrollProgress();
-    
-    // Update back to top button
-    updateBackToTop();
 });
 
 // Smooth scrolling for navigation links

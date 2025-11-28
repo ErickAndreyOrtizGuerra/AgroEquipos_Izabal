@@ -1831,42 +1831,6 @@ section {
         height: 3px;
     }
     
-    /* Back to Top responsive - Optimizado */
-    .back-to-top {
-        bottom: 85px;
-        right: 15px;
-        z-index: 998;
-    }
-    
-    .back-to-top-button {
-        width: 52px;
-        height: 52px;
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
-    }
-    
-    .back-to-top-button i {
-        font-size: 1.3rem;
-    }
-    
-    /* Eliminar hover en móvil */
-    .back-to-top-button:hover {
-        transform: none;
-    }
-    
-    .back-to-top-button:active {
-        transform: scale(0.95);
-    }
-    
-    .progress-ring-svg {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .progress-ring-circle {
-        r: 22;
-        stroke-width: 2;
-    }
 
     .tienda-info {
         grid-template-columns: 1fr;
@@ -2035,94 +1999,6 @@ a, button, input, select, textarea {
     }
 }
 
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 100px;
-    right: 20px;
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.back-to-top-button {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 8px 25px rgba(26, 95, 63, 0.3);
-    transition: all 0.3s ease;
-    overflow: hidden;
-}
-
-.back-to-top-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-accent);
-    transition: var(--transition);
-    z-index: -1;
-}
-
-.back-to-top-button:hover::before {
-    left: 0;
-}
-
-.back-to-top-button:hover {
-    transform: translateY(-3px) scale(1.1);
-    box-shadow: var(--shadow-colored);
-}
-
-.back-to-top-button i {
-    font-size: 1.4rem;
-    color: var(--white);
-    z-index: 2;
-    transition: var(--transition);
-}
-
-.back-to-top-button:hover i {
-    transform: translateY(-2px);
-}
-
-/* Progress Ring */
-.progress-ring {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: rotate(-90deg);
-}
-
-.progress-ring-svg {
-    width: 60px;
-    height: 60px;
-}
-
-.progress-ring-circle {
-    stroke: var(--accent-color);
-    stroke-linecap: round;
-    stroke-dasharray: 164;
-    stroke-dashoffset: 164;
-    transition: stroke-dashoffset 0.1s ease;
-    filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.4));
-}
 
 @keyframes fadeInUp {
     from {
