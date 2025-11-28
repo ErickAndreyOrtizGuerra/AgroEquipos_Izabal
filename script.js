@@ -126,14 +126,11 @@ function updateBackToTop() {
 }
 
 function scrollToTop() {
-    const scrollStep = -window.scrollY / (500 / 15);
-    const scrollInterval = setInterval(() => {
-        if (window.scrollY !== 0) {
-            window.scrollBy(0, scrollStep);
-        } else {
-            clearInterval(scrollInterval);
-        }
-    }, 15);
+    // Usar scroll nativo suave para mejor rendimiento en móvil
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 // Back to Top Click Event
@@ -165,6 +162,20 @@ navLinks.forEach(link => {
             navMenu.classList.remove('active');
         }
     });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navMenu && navToggle) {
+        const isClickInsideMenu = navMenu.contains(e.target);
+        const isClickOnToggle = navToggle.contains(e.target);
+        
+        if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('active')) {
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+        }
+    }
 });
 
 // Header scroll effect and scroll progress

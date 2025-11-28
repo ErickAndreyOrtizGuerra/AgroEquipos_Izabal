@@ -402,11 +402,23 @@ h1, h2, h3, h4 {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    background: linear-gradient(135deg, rgba(200, 159, 93, 0.15), rgba(142, 199, 141, 0.15));
-    border: 1px solid rgba(200, 159, 93, 0.28);
-    padding: 9px;
-    border-radius: 14px;
-    box-shadow: 0 6px 14px rgba(5, 8, 7, 0.32);
+    background: rgba(200, 159, 93, 0.1);
+    border: 1px solid rgba(200, 159, 93, 0.3);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-width: 48px;
+    min-height: 48px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.nav-toggle:active {
+    transform: scale(0.95);
+    background: rgba(200, 159, 93, 0.15);
 }
 
 .nav-toggle:focus-visible {
@@ -415,13 +427,12 @@ h1, h2, h3, h4 {
 }
 
 .bar {
-    width: 22px;
-    height: 2px;
-    background: var(--accent-color);
+    width: 24px;
+    height: 3px;
+    background: #c89f5d;
     margin: 3px 0;
-    transition: var(--transition);
-    border-radius: 1px;
-    box-shadow: 0 0 4px rgba(74, 222, 128, 0.3);
+    transition: all 0.3s ease;
+    border-radius: 2px;
 }
 
 /* Hero Section */
@@ -1559,21 +1570,57 @@ section {
     transform: rotate(90deg);
 }
 
-/* Responsive Design */
+/* Optimizaciones de rendimiento móvil */
 @media (max-width: 768px) {
+    /* Reducir animaciones complejas en móvil */
+    * {
+        animation-duration: 0.3s !important;
+    }
+    
+    /* Mejorar scroll en iOS */
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Optimizar imágenes en móvil */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+    
+    /* Botones más grandes y táctiles */
+    .btn {
+        min-height: 48px;
+        padding: 14px 28px;
+        font-size: 1rem;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .btn:active {
+        transform: scale(0.97);
+    }
+    
+    /* Eliminar hover effects en móvil */
+    .btn:hover {
+        transform: none;
+    }
     .nav-menu {
         position: fixed;
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: rgba(26, 29, 35, 0.98);
-        backdrop-filter: blur(15px);
+        background: rgba(12, 14, 13, 0.98);
+        backdrop-filter: blur(10px);
         width: 100%;
+        height: calc(100vh - 70px);
         text-align: center;
-        transition: var(--transition);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        transition: left 0.3s ease;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
         padding: 2rem 0;
-        border-top: 2px solid var(--accent-color);
+        border-top: 1px solid rgba(200, 159, 93, 0.3);
+        overflow-y: auto;
+        z-index: 999;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-menu.active {
@@ -1586,21 +1633,24 @@ section {
     
     .nav-link {
         display: block;
-        padding: 12px 24px;
-        margin: 8px 16px;
-        background: rgba(74, 222, 128, 0.1);
-        border: 2px solid rgba(74, 222, 128, 0.3);
-        border-radius: 12px;
-        color: var(--text-primary);
-        font-weight: 600;
-        font-size: 1.1rem;
+        padding: 16px 24px;
+        margin: 8px 20px;
+        background: rgba(200, 159, 93, 0.08);
+        border: 1px solid rgba(200, 159, 93, 0.2);
+        border-radius: 8px;
+        color: #f4f5f3;
+        font-weight: 500;
+        font-size: 1.05rem;
+        transition: all 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
     }
     
-    .nav-link:hover {
-        background: rgba(74, 222, 128, 0.2);
-        border-color: var(--accent-color);
-        color: var(--accent-color);
-        transform: scale(1.02);
+    .nav-link:hover,
+    .nav-link:active {
+        background: rgba(200, 159, 93, 0.15);
+        border-color: rgba(200, 159, 93, 0.4);
+        color: #c89f5d;
+        transform: translateX(4px);
     }
 
     .nav-toggle {
@@ -1781,19 +1831,31 @@ section {
         height: 3px;
     }
     
-    /* Back to Top responsive */
+    /* Back to Top responsive - Optimizado */
     .back-to-top {
-        bottom: 90px;
+        bottom: 85px;
         right: 15px;
+        z-index: 998;
     }
     
     .back-to-top-button {
-        width: 50px;
-        height: 50px;
+        width: 52px;
+        height: 52px;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
     }
     
     .back-to-top-button i {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+    }
+    
+    /* Eliminar hover en móvil */
+    .back-to-top-button:hover {
+        transform: none;
+    }
+    
+    .back-to-top-button:active {
+        transform: scale(0.95);
     }
     
     .progress-ring-svg {
@@ -1907,23 +1969,24 @@ a, button, input, select, textarea {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .whatsapp-button {
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #25D366, #128C7E);
     color: var(--white);
-    padding: 15px 20px;
+    padding: 14px 22px;
     border-radius: 50px;
     text-decoration: none;
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    transition: var(--transition);
+    transition: all 0.3s ease;
     font-weight: 600;
-    font-size: 0.9rem;
-    animation: pulse-whatsapp 2s infinite;
-    position: relative;
-    overflow: hidden;
+    font-size: 0.95rem;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .whatsapp-button::before {
