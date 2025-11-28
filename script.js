@@ -48,20 +48,16 @@ function updateProgress(percent) {
 
 function simulateLoading() {
     if (!preloader || document.readyState === 'complete') return;
-
-    let start;
-    const duration = 800;
-
-    function step(timestamp) {
-        if (!start) start = timestamp;
-        const progress = Math.min(((timestamp - start) / duration) * 90, 90);
-        updateProgress(progress);
-        if (progress < 90) {
-            requestAnimationFrame(step);
+    
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 20;
+        if (progress > 85) {
+            clearInterval(interval);
+            progress = 85;
         }
-    }
-
-    requestAnimationFrame(step);
+        updateProgress(progress);
+    }, 150);
 }
 
 function hidePreloader() {
@@ -140,20 +136,30 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Header scroll effect and scroll progress
+// Optimizar scroll con throttle para mejor rendimiento
+let scrollTimeout;
+let ticking = false;
+
 window.addEventListener('scroll', () => {
-    // Header background - usar clases para consistencia
-    if (header) {
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            // Header background - usar clases para consistencia
+            if (header) {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            
+            // Update scroll progress
+            updateScrollProgress();
+            
+            ticking = false;
+        });
+        ticking = true;
     }
-    
-    // Update scroll progress
-    updateScrollProgress();
-});
+}, { passive: true });
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

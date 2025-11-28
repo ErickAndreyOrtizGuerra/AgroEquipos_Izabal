@@ -1572,19 +1572,28 @@ section {
 
 /* Optimizaciones de rendimiento móvil */
 @media (max-width: 768px) {
-    /* Reducir animaciones complejas en móvil */
+    /* Optimizaciones de rendimiento móvil */
     * {
-        animation-duration: 0.3s !important;
+        animation-duration: 0.25s !important;
+        transition-duration: 0.25s !important;
     }
     
     /* Mejorar scroll en iOS */
     body {
         -webkit-overflow-scrolling: touch;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
     
     /* Optimizar imágenes en móvil */
     img {
         image-rendering: -webkit-optimize-contrast;
+        will-change: auto;
+    }
+    
+    /* Reducir blur en móvil para mejor rendimiento */
+    .nav-menu {
+        backdrop-filter: blur(5px) !important;
     }
     
     /* Botones más grandes y táctiles */
@@ -1672,19 +1681,21 @@ section {
     }
 
     .hero {
-        padding: 100px 0 80px;
+        padding: 90px 0 60px;
+        min-height: auto;
     }
 
     .hero-container {
         grid-template-columns: 1fr;
         text-align: left;
-        gap: 2.5rem;
-        padding: 0 24px;
+        gap: 2rem;
+        padding: 0 20px;
     }
 
     .hero-content h1 {
-        font-size: clamp(2rem, 7vw, 2.5rem);
-        margin-bottom: 1.25rem;
+        font-size: clamp(1.75rem, 6vw, 2.25rem);
+        margin-bottom: 1rem;
+        line-height: 1.2;
     }
 
     .hero-content h1::after {
@@ -1723,30 +1734,43 @@ section {
     }
 
     .hero-visual {
-        min-height: 400px;
-        border-radius: 6px;
+        min-height: 300px;
+        max-height: 400px;
+        border-radius: 8px;
+        order: -1;
+    }
+    
+    .hero-visual img {
+        object-fit: cover;
+        height: 100%;
     }
 
     .hero-visual figcaption {
-        padding: 20px;
+        padding: 16px;
         font-size: 0.85rem;
     }
 
     .productos-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .producto-card {
+        margin: 0;
     }
 
     .servicios-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .servicio-card {
-        padding: 2rem 1.5rem;
+        padding: 1.75rem 1.25rem;
     }
 
     .servicio-icon {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
 
     .animated-icon {
@@ -1755,6 +1779,15 @@ section {
 
     .tienda-gallery {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .gallery-item {
+        margin: 0;
+    }
+    
+    .gallery-image {
+        height: 250px;
     }
 
     .gallery-image {
@@ -1861,11 +1894,17 @@ section {
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: clamp(1.75rem, 5vw, 2rem);
+        margin-bottom: 0.75rem;
     }
 
+    .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+    
     .container {
-        padding: 0 15px;
+        padding: 0 20px;
     }
 
     .nav-container {
@@ -1937,6 +1976,7 @@ a, button, input, select, textarea {
 }
 
 .whatsapp-button {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -1951,6 +1991,7 @@ a, button, input, select, textarea {
     font-size: 0.95rem;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+    overflow: hidden;
 }
 
 .whatsapp-button::before {
@@ -1962,7 +2003,7 @@ a, button, input, select, textarea {
     height: 100%;
     background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
     transition: var(--transition);
-    z-index: -1;
+    z-index: 0;
 }
 
 .whatsapp-button:hover::before {
@@ -1977,7 +2018,8 @@ a, button, input, select, textarea {
 
 .whatsapp-button i {
     font-size: 1.5rem;
-    margin-right: 10px;
+    z-index: 1;
+    position: relative;
 }
 
 .whatsapp-text {
@@ -1985,6 +2027,8 @@ a, button, input, select, textarea {
     opacity: 1;
     max-width: 150px;
     transition: var(--transition);
+    z-index: 1;
+    position: relative;
 }
 
 @keyframes pulse-whatsapp {
@@ -2154,8 +2198,17 @@ a, button, input, select, textarea {
 /* Mobile Navigation and General Mobile Styles */
 @media (max-width: 768px) {
     .whatsapp-float {
-        bottom: 15px;
+        bottom: 20px;
         right: 15px;
+    }
+    
+    .whatsapp-button {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .whatsapp-button i {
+        font-size: 1.3rem;
     }
 
     .whatsapp-button {
