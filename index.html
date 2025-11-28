@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agroequipos Izabal - Maquinaria Agrícola y Repuestos</title>
+    <meta name="description" content="Distribuidores autorizados de maquinaria agrícola Stihl y Shindaiwa. Motosierras, molinos, motores, bombas de agua, fumigadoras y más.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <img src="images/logo.png" alt="Agroequipos Izabal" class="preloader-logo-img">
+                <h2>Agroequipos Izabal</h2>
+            </div>
+            <div class="preloader-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <div class="preloader-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">0%</div>
+            </div>
+            <p class="preloader-message">Cargando maquinaria de calidad...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav" aria-label="Navegación principal">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="images/logo.png" alt="Agroequipos Izabal Logo" class="logo-img">
+                    <h2>Agroequipos Izabal</h2>
+                </div>
+                <ul class="nav-menu" id="primary-menu">
+                    <li class="nav-item">
+                        <a href="#inicio" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#productos" class="nav-link">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#servicios" class="nav-link">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tienda" class="nav-link">Nuestra Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#marcas" class="nav-link">Marcas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+                <button class="nav-toggle" type="button" aria-controls="primary-menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main id="main-content" tabindex="-1">
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 id="hero-title" class="typewriter" data-text="Soluciones integrales en maquinaria agrícola">
+                    Soluciones integrales en maquinaria agrícola
+                </h1>
+                <p class="hero-subtitle">Tu tienda de confianza en maquinaria agrícola y herramientas profesionales en Guatemala.</p>
+                <p class="hero-description">Ofrecemos equipos de calidad, repuestos originales y asesoría personalizada para ayudarte a realizar tus proyectos agrícolas y forestales con las mejores herramientas.</p>
+                <ul class="hero-highlights" aria-label="Nuestros beneficios">
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Atención personalizada y asesoría experta</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Productos de marcas reconocidas</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Garantía y servicio postventa</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Respaldo directo de fabricantes internacionales y regionales</li>
+                </ul>
+                <div class="hero-buttons">
+                    <a href="#productos" class="btn btn-primary">Ver productos</a>
+                    <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
+                </div>
+            </div>
+            <figure class="hero-visual">
+                <div class="hero-visual-overlay"></div>
+                <img src="images/1" alt="Equipo técnico de Agroequipos Izabal en operación" loading="lazy" decoding="async">
+                <figcaption>Más de 15 años brindando las mejores herramientas en el oriente del país.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- Separador -->
+    <div class="wave-separator"></div>
+
+    <!-- Productos Section -->
+    <section id="productos" class="productos" aria-labelledby="productos-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="productos-title" class="section-title">
+                    Nuestros Productos
+                    <span class="title-decoration"></span>
+                </h2>
+                <p class="section-subtitle">Equipos de calidad para tus proyectos agrícolas y forestales</p>
+            </div>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <div class="producto-image">
+                        <img src="images/Stihl MS 250.jpg" alt="Motosierra Stihl MS 250" loading="lazy" decoding="async">
+                    </div>
+                    <div class="producto-content">
+                        <h3>Motosierras</h3>
+                        <p>Motosierras profesionales Stihl y Shindaiwa para trabajos forestales y de jardinería.</p>
+                        <div class="producto-features">
+                            <span class="feature">Alta potencia</span>
+                            <span class="feature">Bajo consumo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-image">
+                        <img src="images/molino.jpg" alt="Molino de granos industrial" loading="lazy" decoding="async">
+                    </div>
+                    <div class="producto-content">
+                        <h3>Molinos</h3>
+                        <p>Molinos de granos y forrajes de alta eficiencia para uso agrícola e industrial.</p>
+                        <div class="producto-features">
+                            <span class="feature">Durabilidad</span>
+                            <span class="feature">Eficiencia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-image">
+                        <img src="images/bomba de agua.jpg" alt="Bomba de Agua" loading="lazy" decoding="async">
+                    </div>
+                    <div class="producto-content">
+                        <h3>Bombas de Agua</h3>
+                        <p>Bombas de agua para riego, drenaje y aplicaciones agrícolas diversas.</p>
+                        <div class="producto-features">
+                            <span class="feature">Alto caudal</span>
+                            <span class="feature">Resistente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-image">
+                        <img src="images/Stihl SR 440.jpg" alt="Fumigadora Stihl SR 440" loading="lazy" decoding="async">
+                    </div>
+                    <div class="producto-content">
+                        <h3>Fumigadoras</h3>
+                        <p>Equipos de fumigación profesionales para control de plagas y aplicación de químicos.</p>
+                        <div class="producto-features">
+                            <span class="feature">Precisión</span>
+                            <span class="feature">Ergonómico</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-image">
+                        <img src="images/Stihl FS 380.jpg" alt="Chapiadora Stihl FS 380" loading="lazy" decoding="async">
+                    </div>
+                    <div class="producto-content">
+                        <h3>Chapiadoras</h3>
+                        <p>Chapiadoras y desbrozadoras para mantenimiento de terrenos y cultivos.</p>
+                        <div class="producto-features">
+                            <span class="feature">Versatilidad</span>
+                            <span class="feature">Potencia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-image">
+                        <img src="images/generador.jpg" alt="Generador" loading="lazy" decoding="async">
+                    </div>
+                    <div class="producto-content">
+                        <h3>Generadores</h3>
+                        <p>Generadores eléctricos portátiles y estacionarios para respaldo de energía.</p>
+                        <div class="producto-features">
+                            <span class="feature">Confiable</span>
+                            <span class="feature">Silencioso</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-image">
+                        <img src="images/motores estacionario.jpg" alt="Motor Estacionario" loading="lazy" decoding="async">
+                    </div>
+                    <div class="producto-content">
+                        <h3>Motores</h3>
+                        <p>Motores de combustión interna para diversas aplicaciones agrícolas e industriales.</p>
+                        <div class="producto-features">
+                            <span class="feature">Eficiente</span>
+                            <span class="feature">Duradero</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-image">
+                        <img src="images/stihl.jpg" alt="Inventario de repuestos originales y genéricos" loading="lazy" decoding="async">
+                    </div>
+                    <div class="producto-content">
+                        <h3>Repuestos</h3>
+                        <p>Repuestos originales Shindaiwa y Stihl y repuestos genéricos de calidad para mantener tu equipo en óptimas condiciones.</p>
+                        <div class="producto-features">
+                            <span class="feature">Originales</span>
+                            <span class="feature">Genéricos</span>
+                            <span class="feature">Garantía</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separador -->
+    <div class="dots-separator"></div>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="servicios" aria-labelledby="servicios-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="servicios-title" class="section-title">
+                    Nuestros Servicios
+                    <span class="title-decoration"></span>
+                </h2>
+                <p class="section-subtitle">Soporte técnico y mantenimiento para tus equipos</p>
+            </div>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-tools animated-icon" aria-hidden="true"></i>
+                    </div>
+                    <h3>Reparación</h3>
+                    <p>Servicio técnico especializado para todas las marcas de maquinaria agrícola con repuestos originales.</p>
+                    <ul class="servicio-features">
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Repuestos originales</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Servicio especializado</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Reparaciones garantizadas</li>
+                    </ul>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-cogs animated-icon" aria-hidden="true"></i>
+                    </div>
+                    <h3>Mantenimiento</h3>
+                    <p>Programas de mantenimiento preventivo para alargar la vida útil de tu maquinaria.</p>
+                    <ul class="servicio-features">
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Mantenimiento programado</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Revisiones periódicas</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Lubricantes de calidad</li>
+                    </ul>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-shield-alt animated-icon" aria-hidden="true"></i>
+                    </div>
+                    <h3>Garantía</h3>
+                    <p>Garantía extendida en todos nuestros productos y servicios para tu tranquilidad.</p>
+                    <ul class="servicio-features">
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Garantía extendida</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Soporte técnico 24/7</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Respaldo total</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separador -->
+    <div class="elegant-separator"></div>
+
+    <!-- Nuestra Tienda Section -->
+    <section id="tienda" class="tienda" aria-labelledby="tienda-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="tienda-title" class="section-title">
+                    Nuestra Tienda
+                    <span class="title-decoration"></span>
+                </h2>
+                <p class="section-subtitle">Instalaciones equipadas para atenderte mejor</p>
+            </div>
+            <div class="tienda-gallery">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/1" alt="Sala de exhibición de maquinaria Agroequipos Izabal" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-caption">Nuestra tienda con demostraciones en vivo.</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/2" alt="Taller de reparaciones Agroequipos Izabal" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-caption">Taller certificado con herramientas de diagnóstico.</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/3" alt="Almacén de repuestos Agroequipos Izabal" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-caption">Inventario de repuestos estratégicos con reposición inmediata.</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/4" alt="Área de atención al cliente Agroequipos Izabal" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-caption">Zona de asesoría especializada y seguimiento comercial.</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/5" alt="Instalaciones Agroequipos Izabal" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gallery-caption">Centro logístico con área de despacho y control de calidad.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separador -->
+    <div class="geometric-separator"></div>
+
+    <!-- Marcas Section -->
+    <section id="marcas" class="marcas" aria-labelledby="marcas-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="marcas-title" class="section-title">
+                    Distribuidor autorizado
+                    <span class="title-decoration"></span>
+                </h2>
+                <p class="section-subtitle">Productos de marcas líderes en el mercado</p>
+            </div>
+            <div class="marcas-grid">
+                <div class="marca-card">
+                    <div class="marca-logo">
+                        <img src="images/shindaiwa.png" alt="Logo Shindaiwa" class="marca-logo-img" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Shindaiwa</h3>
+                    <p>Equipos profesionales de alta calidad para aplicaciones comerciales y agrícolas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separador -->
+    <div class="dots-separator"></div>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contacto" aria-labelledby="contacto-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="contacto-title" class="section-title">
+                    Conversemos sobre su proyecto
+                    <span class="title-decoration"></span>
+                </h2>
+                <p class="section-subtitle">Comparta sus requerimientos y nuestro equipo ejecutivo le brindará una propuesta integral</p>
+            </div>
+            <div class="contacto-content">
+                <div class="contacto-info">
+                    <div class="info-item">
+                        <div class="info-icon" aria-hidden="true">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Ubicación</h4>
+                            <p>Puerto Barrios, Izabal, Guatemala</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon" aria-hidden="true">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Teléfono</h4>
+                            <p>+502 3020-0965</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon" aria-hidden="true">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>agroequiposizabal@hotmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon" aria-hidden="true">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Horarios</h4>
+                            <p>Lun - Vie: 8:00 AM - 5:30 PM<br>Sáb: 8:00 AM - 12:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacto-form">
+                    <form class="form" aria-labelledby="contacto-title">
+                        <div class="form-group">
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Tu email" autocomplete="email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <select id="producto" name="producto" required>
+                                <option value="">Producto de interés</option>
+                                <option value="motosierras">Motosierras</option>
+                                <option value="molinos">Molinos</option>
+                                <option value="motores">Motores</option>
+                                <option value="bombas">Bombas de Agua</option>
+                                <option value="fumigadoras">Fumigadoras</option>
+                                <option value="chapiadoras">Chapiadoras</option>
+                                <option value="generadores">Generadores</option>
+                                <option value="repuestos">Repuestos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar por WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separador Final -->
+    <div class="elegant-separator"></div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Agroequipos Izabal</h3>
+                    <p>Tu tienda de confianza en maquinaria agrícola. Distribuidores autorizados de Shindaiwa.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="#productos">Motosierras</a></li>
+                        <li><a href="#productos">Molinos</a></li>
+                        <li><a href="#productos">Bombas de Agua</a></li>
+                        <li><a href="#productos">Repuestos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Puerto Barrios, Izabal, Guatemala</li>
+                        <li><i class="fas fa-phone"></i> +502 3020-0965</li>
+                        <li><i class="fas fa-envelope"></i> agroequiposizabal@hotmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Agroequipos Izabal. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/50230200965" class="whatsapp-button" id="whatsappBtn" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span class="whatsapp-text">¿Necesitas ayuda?</span>
+        </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <div class="back-to-top-button">
+            <i class="fas fa-chevron-up" aria-hidden="true"></i>
+            <div class="progress-ring">
+                <svg class="progress-ring-svg" width="60" height="60">
+                    <circle class="progress-ring-circle" 
+                            cx="30" cy="30" r="26" 
+                            fill="transparent" 
+                            stroke-width="3"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
