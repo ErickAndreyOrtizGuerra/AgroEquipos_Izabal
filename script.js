@@ -613,6 +613,10 @@ function initScrollAnimations() {
     // Observar headers de sección
     const sectionHeaders = document.querySelectorAll('.section-header');
     sectionHeaders.forEach(header => observer.observe(header));
+    
+    // Observar badges de confianza
+    const trustBadges = document.querySelectorAll('.trust-badge');
+    trustBadges.forEach(badge => observer.observe(badge));
 }
 
 // Lightbox minimalista para galería
