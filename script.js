@@ -675,13 +675,175 @@ function initLightbox() {
     });
 }
 
+// Sistema de Partículas en Hero
+function initParticles() {
+    const canvas = document.getElementById('particlesCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animationId;
+    
+    // Configurar tamaño del canvas
+    function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+    
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    
+    // Clase Partícula
+    class Particle {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * canvas.height;
+            this.opacity = Math.random() * 0.5 + 0.2;
+            this.twinkle = Math.random() > 0.7; // 30% de partículas parpadean
+            this.twinkleSpeed = Math.random() * 0.02 + 0.01;
+            this.twinklePhase = Math.random() * Math.PI * 2;
+        }
+        
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = -10;
+            this.size = Math.random() * 5 + 2;
+            this.speedY = Math.random() * 0.8 + 0.3;
+            this.speedX = (Math.random() - 0.5) * 0.5;
+            this.opacity = Math.random() * 0.7 + 0.3;
+            this.baseOpacity = this.opacity;
+        }
+        
+        update() {
+            this.y += this.speedY;
+            this.x += this.speedX;
+            
+            // Efecto de parpadeo
+            if (this.twinkle) {
+                this.twinklePhase += this.twinkleSpeed;
+                this.opacity = this.baseOpacity + Math.sin(this.twinklePhase) * 0.3;
+            }
+            
+            // Resetear si sale de la pantalla
+            if (this.y > canvas.height) {
+                this.reset();
+            }
+            
+            if (this.x < 0 || this.x > canvas.width) {
+                this.x = Math.random() * canvas.width;
+            }
+        }
+        
+        draw() {
+            // Glow effect más intenso
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = `rgba(200, 159, 93, ${this.opacity})`;
+            
+            // Partícula principal
+            ctx.fillStyle = `rgba(200, 159, 93, ${this.opacity})`;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Halo adicional
+            ctx.shadowBlur = 30;
+            ctx.fillStyle = `rgba(230, 197, 122, ${this.opacity * 0.6})`;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size * 0.5, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Reset shadow
+            ctx.shadowBlur = 0;
+        }
+    }
+    
+    // Crear partículas
+    function createParticles() {
+        const particleCount = window.innerWidth < 768 ? 50 : 80;
+        particles = [];
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+    }
+    
+    createParticles();
+    
+    // Animar partículas
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach(particle => {
+            particle.update();
+            particle.draw();
+        });
+        
+        // Conectar partículas cercanas
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 150) {
+                    const opacity = 0.3 * (1 - distance / 150);
+                    ctx.strokeStyle = `rgba(200, 159, 93, ${opacity})`;
+                    ctx.lineWidth = 1;
+                    ctx.shadowBlur = 5;
+                    ctx.shadowColor = `rgba(200, 159, 93, ${opacity * 0.5})`;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                    ctx.shadowBlur = 0;
+                }
+            }
+        }
+        
+        animationId = requestAnimationFrame(animate);
+    }
+    
+    animate();
+    
+    // Limpiar al salir
+    window.addEventListener('beforeunload', () => {
+        cancelAnimationFrame(animationId);
+    });
+}
+
+// Parallax Effect
+function initParallax() {
+    const parallaxElements = document.querySelectorAll('[data-parallax]');
+    
+    if (parallaxElements.length === 0) return;
+    
+    let ticking = false;
+    
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                parallaxElements.forEach(el => {
+                    const speed = el.dataset.parallax || 0.5;
+                    const yPos = -(window.pageYOffset * speed);
+                    el.style.transform = `translateY(${yPos}px)`;
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
 // Inicializar todas las funciones
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         initScrollAnimations();
         initLightbox();
+        initParticles();
+        initParallax();
     });
 } else {
     initScrollAnimations();
     initLightbox();
+    initParticles();
+    initParallax();
 }
