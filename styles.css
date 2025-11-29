@@ -2042,6 +2042,7 @@ section {
         min-height: auto;
         position: relative;
         overflow: visible;
+        isolation: isolate;
     }
 
     .hero-container {
@@ -2049,8 +2050,6 @@ section {
         text-align: left;
         gap: 1.5rem;
         padding: 0 20px;
-        position: relative;
-        z-index: 3;
     }
 
     .hero-title-animated {
@@ -2110,15 +2109,12 @@ section {
 
     .hero-content {
         position: relative;
-        z-index: 4;
     }
 
     .hero-buttons {
         gap: 1rem;
         margin-top: 2rem;
-        margin-bottom: 2rem;
-        position: relative;
-        z-index: 5;
+        margin-bottom: 3rem;
         display: flex;
         flex-direction: column;
     }
@@ -2128,8 +2124,6 @@ section {
         font-size: 0.95rem;
         width: 100%;
         justify-content: center;
-        position: relative;
-        z-index: 5;
     }
 
     .hero-visual {
@@ -2704,6 +2698,7 @@ section {
         padding: 90px 0 50px;
         min-height: auto;
         overflow: visible;
+        isolation: isolate;
     }
 
     .hero-container {
@@ -2711,10 +2706,6 @@ section {
         padding: 0 15px;
     }
 
-    .hero-content {
-        z-index: 4;
-    }
-    
     .hero-title-animated {
         font-size: 1.85rem;
         gap: 0.35rem;
@@ -2749,8 +2740,7 @@ section {
         gap: 1rem;
         align-items: stretch;
         margin-top: 2rem;
-        margin-bottom: 2rem;
-        z-index: 5;
+        margin-bottom: 3rem;
     }
     
     .btn {
@@ -2758,7 +2748,6 @@ section {
         justify-content: center;
         padding: 14px 28px;
         font-size: 0.95rem;
-        z-index: 5;
     }
 
     .hero-visual {
@@ -2766,7 +2755,6 @@ section {
         margin-bottom: 1.5rem;
         min-height: 260px;
         max-height: 320px;
-        z-index: 2;
     }
 
     section {
