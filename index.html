@@ -12,6 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS - Animate On Scroll (Ligero: 13KB) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Particles.js para fondo animado -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
@@ -99,29 +105,32 @@
     <!-- Hero Section -->
     <main id="main-content" tabindex="-1">
     <section id="inicio" class="hero" aria-labelledby="hero-title">
+        <!-- Particles Background -->
+        <div id="particles-js" class="particles-container"></div>
+        
         <div class="hero-container">
             <div class="hero-content">
-                <h1 id="hero-title" class="hero-title-animated">
-                    <span class="hero-title-line">Soluciones integrales en</span>
-                    <span class="hero-title-line hero-title-highlight">maquinaria agrícola</span>
+                <h1 id="hero-title" class="hero-title-animated" data-aos="fade-up" data-aos-duration="1000">
+                    <span class="hero-title-line" data-aos="fade-up" data-aos-delay="200">Soluciones integrales en</span>
+                    <span class="hero-title-line hero-title-highlight" data-aos="fade-up" data-aos-delay="400">maquinaria agrícola</span>
                 </h1>
-                <p class="hero-subtitle">Tu tienda de confianza en maquinaria agrícola y herramientas profesionales en Guatemala.</p>
-                <p class="hero-description">Ofrecemos equipos de calidad, repuestos originales y asesoría personalizada para ayudarte a realizar tus proyectos agrícolas y forestales con las mejores herramientas.</p>
-                <ul class="hero-highlights" aria-label="Nuestros beneficios">
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Atención personalizada y asesoría experta</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Productos de marcas reconocidas</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Garantía y servicio postventa</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Respaldo directo de fabricantes internacionales y regionales</li>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="600">Tu tienda de confianza en maquinaria agrícola y herramientas profesionales en Guatemala.</p>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="700">Ofrecemos equipos de calidad, repuestos originales y asesoría personalizada para ayudarte a realizar tus proyectos agrícolas y forestales con las mejores herramientas.</p>
+                <ul class="hero-highlights" aria-label="Nuestros beneficios" data-aos="fade-up" data-aos-delay="800">
+                    <li data-aos="fade-right" data-aos-delay="900"><i class="fas fa-check" aria-hidden="true"></i> Atención personalizada y asesoría experta</li>
+                    <li data-aos="fade-right" data-aos-delay="1000"><i class="fas fa-check" aria-hidden="true"></i> Productos de marcas reconocidas</li>
+                    <li data-aos="fade-right" data-aos-delay="1100"><i class="fas fa-check" aria-hidden="true"></i> Garantía y servicio postventa</li>
+                    <li data-aos="fade-right" data-aos-delay="1200"><i class="fas fa-check" aria-hidden="true"></i> Respaldo directo de fabricantes internacionales y regionales</li>
                 </ul>
-                <div class="hero-buttons">
-                    <a href="#productos" class="btn btn-primary">Ver productos</a>
-                    <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
+                <div class="hero-buttons" data-aos="zoom-in" data-aos-delay="1300">
+                    <a href="#productos" class="btn btn-primary" data-aos="flip-left" data-aos-delay="1400">Ver productos</a>
+                    <a href="#contacto" class="btn btn-secondary" data-aos="flip-left" data-aos-delay="1500">Contáctanos</a>
                 </div>
             </div>
-            <figure class="hero-visual">
+            <figure class="hero-visual" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="300">
                 <div class="hero-visual-overlay"></div>
                 <img src="images/1" alt="Equipo técnico de Agroequipos Izabal en operación" loading="lazy" decoding="async">
-                <figcaption>Más de 15 años brindando las mejores herramientas en el oriente del país.</figcaption>
+                <figcaption data-aos="fade-up" data-aos-delay="1600">Más de 15 años brindando las mejores herramientas en el oriente del país.</figcaption>
             </figure>
         </div>
     </section>
@@ -132,15 +141,15 @@
     <!-- Productos Section -->
     <section id="productos" class="productos" aria-labelledby="productos-title">
         <div class="container">
-            <div class="section-header">
-                <h2 id="productos-title" class="section-title">
+            <div class="section-header" data-aos="fade-up">
+                <h2 id="productos-title" class="section-title" data-aos="fade-down" data-aos-duration="800">
                     Nuestros Productos
                     <span class="title-decoration"></span>
                 </h2>
-                <p class="section-subtitle">Equipos de calidad para tus proyectos agrícolas y forestales</p>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Equipos de calidad para tus proyectos agrícolas y forestales</p>
             </div>
             <div class="productos-grid">
-                <div class="producto-card">
+                <div class="producto-card" data-aos="zoom-in" data-aos-delay="100">
                     <div class="producto-image">
                         <img src="images/Stihl MS 250.jpg" alt="Motosierra Stihl MS 250" loading="lazy" decoding="async">
                     </div>
@@ -154,7 +163,7 @@
                     </div>
                 </div>
 
-                <div class="producto-card">
+                <div class="producto-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="producto-image">
                         <img src="images/molino.jpg" alt="Molino de granos industrial" loading="lazy" decoding="async">
                     </div>
@@ -168,7 +177,7 @@
                     </div>
                 </div>
 
-                <div class="producto-card">
+                <div class="producto-card" data-aos="zoom-in" data-aos-delay="300">
                     <div class="producto-image">
                         <img src="images/bomba de agua.jpg" alt="Bomba de Agua" loading="lazy" decoding="async">
                     </div>
@@ -182,7 +191,7 @@
                     </div>
                 </div>
 
-                <div class="producto-card">
+                <div class="producto-card" data-aos="zoom-in" data-aos-delay="400">
                     <div class="producto-image">
                         <img src="images/Stihl SR 440.jpg" alt="Fumigadora Stihl SR 440" loading="lazy" decoding="async">
                     </div>
@@ -196,7 +205,7 @@
                     </div>
                 </div>
 
-                <div class="producto-card">
+                <div class="producto-card" data-aos="zoom-in" data-aos-delay="500">
                     <div class="producto-image">
                         <img src="images/Stihl FS 380.jpg" alt="Chapiadora Stihl FS 380" loading="lazy" decoding="async">
                     </div>
@@ -581,6 +590,9 @@
         </a>
     </div>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script src="animations.js"></script>
 </body>
 </html>
